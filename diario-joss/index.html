@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171014">
+  <meta name="description" content="Un pequeño diario hecho de palabras, recuerdos y poemas para Joss.">
+  <title>Para Joss — Un diario de palabras</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <span class="brand-mark">J</span>
+      <span>un diario para <strong>joss</strong></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#inicio" class="nav-link active">Inicio</a>
+      <a href="#poemas" class="nav-link">Poemas</a>
+      <a href="#cartas" class="nav-link">Cartas</a>
+      <a href="#pensamientos" class="nav-link">Pensamientos</a>
+      <a href="#acerca" class="nav-link">Este diario</a>
+    </nav>
+
+    <a class="admin-link" href="admin.html" aria-label="Acceso privado de administración">
+      <span class="lock-icon">⌑</span> Mi espacio
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-line"></span> UN LUGAR HECHO DE PALABRAS</span>
+        <h1>Hay cosas que<br>merecen <em>quedarse.</em></h1>
+        <p class="hero-description">
+          No sé si algún día llegarás a leer estas páginas.
+          Aun así, quise darles un lugar. Este pequeño rincón
+          guarda palabras que nacieron pensando en ti.
+        </p>
+        <div class="hero-actions">
+          <a href="#poemas" class="button button-primary">Abrir el diario <span>↗</span></a>
+          <a href="#acerca" class="text-link">Conocer este lugar <span>↓</span></a>
+        </div>
+        <div class="hero-note">
+          <span class="note-star">✳</span>
+          <span>Escrito sin prisa, conservado con cariño.</span>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="Ilustración decorativa de una carta y flores">
+        <div class="art-glow"></div>
+        <div class="art-spark spark-one">✦</div>
+        <div class="art-spark spark-two">✧</div>
+        <div class="art-spark spark-three">·</div>
+        <div class="paper-shadow"></div>
+        <article class="letter-paper">
+          <div class="paper-topline"><span>PARA J.</span><span>CON CARIÑO</span></div>
+          <div class="paper-flower">✿</div>
+          <p class="paper-script">A veces, escribir<br>es la manera más<br>bonita de guardar<br>lo que sentimos.</p>
+          <div class="paper-bottom"><span>— A.</span><span>✧</span></div>
+        </article>
+        <div class="flower flower-left">✿</div>
+        <div class="flower flower-right">❀</div>
+        <div class="art-caption">un universo pequeño, solo de palabras</div>
+      </div>
+    </section>
+
+    <section class="intro-strip">
+      <span class="intro-symbol">“</span>
+      <p>Hay sentimientos que no necesitan destino.<br><em>A veces basta con darles un lugar.</em></p>
+      <span class="intro-symbol closing">”</span>
+    </section>
+
+    <section class="section collection-section" id="poemas">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">01 / EL ÁLBUM</span>
+          <h2>Palabras que <em>te nombran.</em></h2>
+          <p class="section-description">Poemas que encontraron su forma en una hoja, y su motivo en ti.</p>
+        </div>
+        <a href="#cartas" class="text-link heading-link">Seguir leyendo <span>↗</span></a>
+      </div>
+
+      <div class="filter-row" aria-label="Filtrar poemas">
+        <button class="filter-button active" data-filter="todos">Todos <span>03</span></button>
+        <button class="filter-button" data-filter="amor">Cariño</button>
+        <button class="filter-button" data-filter="nostalgia">Nostalgia</button>
+        <button class="filter-button" data-filter="quimica">Química</button>
+      </div>
+
+      <div class="poem-grid" id="poemGrid">
+        <article class="poem-card featured-card" data-category="quimica">
+          <div class="card-art chemistry-art">
+            <span class="card-number">01</span>
+            <span class="chemistry-symbol">C₈H₁₁NO₂</span>
+            <span class="art-orbit orbit-a"></span><span class="art-orbit orbit-b"></span>
+            <span class="card-art-caption">la ciencia de sentir</span>
+          </div>
+          <div class="card-content">
+            <div class="card-meta"><span>POEMA</span><span>QUÍMICA</span></div>
+            <h3>La química de lo que siento</h3>
+            <p>Una manera de hablar de aquello que las palabras no siempre consiguen explicar.</p>
+            <button class="read-link" data-poem="quimica">Leer poema <span>↗</span></button>
+          </div>
+        </article>
+
+        <article class="poem-card" data-category="nostalgia">
+          <div class="card-art nostalgia-art">
+            <span class="card-number">02</span>
+            <span class="moon">☾</span>
+            <span class="star star-a">✦</span><span class="star star-b">✧</span>
+            <span class="card-art-caption">lo que permanece</span>
+          </div>
+          <div class="card-content">
+            <div class="card-meta"><span>POEMA</span><span>NOSTALGIA</span></div>
+            <h3>Lo que guardan los silencios</h3>
+            <p>Para esos días en los que un recuerdo aparece sin pedir permiso.</p>
+            <button class="read-link" data-poem="silencios">Leer poema <span>↗</span></button>
+          </div>
+        </article>
+
+        <article class="poem-card" data-category="amor">
+          <div class="card-art rose-art">
+            <span class="card-number">03</span>
+            <span class="rose">✿</span>
+            <span class="card-art-caption">pequeñas cosas tuyas</span>
+          </div>
+          <div class="card-content">
+            <div class="card-meta"><span>POEMA</span><span>CARIÑO</span></div>
+            <h3>Las cosas que te hacen tú</h3>
+            <p>Un homenaje a los detalles pequeños que vuelven inolvidable a una persona.</p>
+            <button class="read-link" data-poem="detalles">Leer poema <span>↗</span></button>
+          </div>
+        </article>
+      </div>
+      <p class="prototype-note">Los textos de esta primera maqueta son espacios de muestra. Aquí iremos incorporando los poemas originales, sin inventar recuerdos ni atribuirte palabras que no hayas escrito.</p>
+    </section>
+
+    <section class="letter-section" id="cartas">
+      <div class="letter-decoration">✳</div>
+      <div class="letter-inner">
+        <span class="eyebrow">02 / ENTRE LÍNEAS</span>
+        <h2>Cartas que quizá<br><em>nunca se envíen.</em></h2>
+        <p>Hay palabras que no buscan respuesta. Solo necesitan salir del pensamiento y descansar en algún sitio. Este espacio es para ellas.</p>
+        <a href="#pensamientos" class="button button-outline">Continuar el recorrido <span>↗</span></a>
+      </div>
+      <div class="letter-side-note">PÁGINAS SIN DESTINATARIO<br>PALABRAS CON NOMBRE</div>
+    </section>
+
+    <section class="section thoughts-section" id="pensamientos">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">03 / NOTAS AL MARGEN</span>
+          <h2>Pequeños <em>pensamientos.</em></h2>
+          <p class="section-description">Porque no todo lo importante llega convertido en poema.</p>
+        </div>
+      </div>
+      <div class="thought-grid">
+        <article class="thought-card">
+          <span class="thought-date">UNA NOTA PARA RECORDAR</span>
+          <p>Que algo no llegue a leerse no significa que no haya valido la pena escribirlo.</p>
+          <span class="thought-mark">✧</span>
+        </article>
+        <article class="thought-card thought-card-light">
+          <span class="thought-date">ENTRE PÁGINAS</span>
+          <p>Este diario no tiene prisa. Siempre habrá espacio para una palabra más.</p>
+          <span class="thought-mark">✿</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-section" id="acerca">
+      <div class="about-ornament">J</div>
+      <div class="about-content">
+        <span class="eyebrow">04 / EL SENTIDO DE TODO ESTO</span>
+        <h2>No es una página.<br><em>Es un lugar.</em></h2>
+        <p>Un lugar para reunir poemas, cartas, recuerdos y pensamientos. Para volver cuando haya algo que escribir. Para conservar lo bonito, lo difícil y todo aquello que alguna vez mereció convertirse en palabras.</p>
+        <div class="signature">Con cariño, <span>A.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#inicio">para joss <span>✳</span></a>
+    <p>Hecho de palabras, con cariño.</p>
+    <a href="admin.html" class="footer-admin">Acceso privado</a>
+  </footer>
+
+  <div class="modal" id="poemModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="modal-paper" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Cerrar">×</button>
+      <span class="eyebrow" id="modalCategory">DEL ÁLBUM</span>
+      <h2 id="modalTitle">Título del poema</h2>
+      <div class="modal-divider">✳</div>
+      <div class="modal-body" id="modalBody"></div>
+      <span class="modal-signature">— A.</span>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

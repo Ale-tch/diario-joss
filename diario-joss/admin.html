@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administración | Joss</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            min-height: 100vh;
+        }
+
+        .admin-container {
+            width: min(900px, 92%);
+            margin: 60px auto;
+        }
+
+        .admin-header {
+            margin-bottom: 35px;
+        }
+
+        .admin-header h1 {
+            margin-bottom: 10px;
+        }
+
+        .admin-panel,
+        .admin-login {
+            padding: 30px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .admin-login {
+            max-width: 450px;
+            margin: 70px auto;
+        }
+
+        .admin-form {
+            display: grid;
+            gap: 18px;
+        }
+
+        .admin-form label {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .admin-form input,
+        .admin-form textarea,
+        .admin-form select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.2);
+            color: inherit;
+            font: inherit;
+        }
+
+        .admin-form textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .admin-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .admin-button {
+            padding: 12px 20px;
+            border: 0;
+            border-radius: 8px;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .admin-message {
+            margin-top: 15px;
+            min-height: 24px;
+        }
+
+        .admin-section {
+            margin-top: 30px;
+        }
+
+        .admin-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .admin-hidden {
+            display: none;
+        }
+
+        .admin-note {
+            opacity: 0.75;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .admin-container {
+                margin: 30px auto;
+            }
+
+            .admin-panel,
+            .admin-login {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="admin-container">
+
+        <header class="admin-header">
+            <a href="index.html">← Volver al diario</a>
+            <h1>Un espacio para guardar recuerdos</h1>
+            <p>Panel privado de administración</p>
+        </header>
+
+        <!-- INICIO DE SESIÓN -->
+        <section id="loginSection" class="admin-login">
+
+            <h2>Acceso privado</h2>
+
+            <p class="admin-note">
+                Este espacio está reservado para administrar los recuerdos
+                y escritos del diario.
+            </p>
+
+            <form id="loginForm" class="admin-form">
+
+                <div>
+                    <label for="password">Contraseña</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Introduce tu contraseña"
+                        required
+                        autocomplete="current-password">
+                </div>
+
+                <button type="submit" class="admin-button">
+                    Entrar
+                </button>
+
+            </form>
+
+            <p id="loginMessage" class="admin-message"></p>
+
+        </section>
+
+        <!-- PANEL DE ADMINISTRACIÓN -->
+        <section id="adminSection" class="admin-hidden">
+
+            <div class="admin-top">
+                <div>
+                    <h2>Tu espacio de escritura</h2>
+                    <p class="admin-note">
+                        Aquí puedes añadir nuevos textos al diario.
+                    </p>
+                </div>
+
+                <button id="logoutButton" class="admin-button" type="button">
+                    Cerrar sesión
+                </button>
+            </div>
+
+            <div class="admin-panel">
+
+                <h3>Agregar un nuevo escrito</h3>
+
+                <form id="contentForm" class="admin-form">
+
+                    <div>
+                        <label for="contentType">Tipo de contenido</label>
+
+                        <select id="contentType" name="tipo" required>
+                            <option value="poema">Poema</option>
+                            <option value="carta">Carta</option>
+                            <option value="pensamiento">Pensamiento</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="contentTitle">Título</label>
+
+                        <input
+                            type="text"
+                            id="contentTitle"
+                            name="titulo"
+                            placeholder="Título de tu escrito"
+                            maxlength="120"
+                            required>
+                    </div>
+
+                    <div>
+                        <label for="contentDate">Fecha</label>
+
+                        <input
+                            type="date"
+                            id="contentDate"
+                            name="fecha"
+                            required>
+                    </div>
+
+                    <div>
+                        <label for="contentText">Contenido</label>
+
+                        <textarea
+                            id="contentText"
+                            name="contenido"
+                            placeholder="Escribe aquí..."
+                            required></textarea>
+                    </div>
+
+                    <div class="admin-actions">
+                        <button type="submit" class="admin-button">
+                            Guardar escrito
+                        </button>
+
+                        <button type="reset" class="admin-button">
+                            Limpiar
+                        </button>
+                    </div>
+
+                </form>
+
+                <p id="saveMessage" class="admin-message"></p>
+
+            </div>
+
+            <section class="admin-section admin-panel">
+
+                <h3>Escritos guardados</h3>
+
+                <p class="admin-note">
+                    Desde aquí podrás consultar, editar y eliminar
+                    los textos que hayas agregado.
+                </p>
+
+                <div id="contentList">
+                    <p>Todavía no se han cargado los escritos.</p>
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
